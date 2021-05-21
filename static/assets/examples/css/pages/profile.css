@@ -1,0 +1,158 @@
+.page-profile .card-block {
+  padding: 40px 15px;
+  background-color: #fff;
+}
+
+.page-profile .card-footer {
+  padding: 10px;
+  background-color: #f6f9fd;
+  border-top: none;
+}
+
+.page-profile .card .avatar {
+  width: 130px;
+  margin-bottom: 10px;
+}
+
+.page-profile .profile-user {
+  margin-bottom: 10px;
+  color: #263238;
+}
+
+.page-profile .profile-job {
+  margin-bottom: 20px;
+  color: #a3afb7;
+}
+
+.page-profile .profile-social {
+  margin: 25px 0;
+}
+
+.page-profile .profile-social .icon {
+  margin: 0 10px;
+  color: rgba(55, 71, 79, .4);
+}
+
+.page-profile .profile-stat-count {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 20px;
+  font-weight: 100;
+  color: #526069;
+}
+
+.page-profile .profile-stat-count + span {
+  color: #a3afb7;
+}
+
+.page-profile .page-content .list-group-item {
+  padding: 25px 15px;
+  border-top-color: #e4eaec;
+}
+
+.page-profile .page-content .list-group-item:first-child {
+  border-top: transparent;
+}
+
+.page-profile .page-content .list-group-item:last-child {
+  border-bottom-color: #e4eaec;
+}
+
+.page-profile .page-content .list-group-item .media .avatar {
+  width: 50px;
+}
+
+.page-profile .page-content .list-group-item .media small {
+  color: #a3afb7;
+}
+
+.page-profile .page-content .list-group-item .media-heading {
+  font-size: 16px;
+}
+
+.page-profile .page-content .list-group-item .media-heading span {
+  margin-left: 5px;
+  font-size: 1rem;
+  color: #76838f;
+}
+
+.page-profile .page-content .list-group-item .media .media:first-child {
+  border-top: none;
+}
+
+.page-profile .profile-readMore {
+  margin: 40px 0;
+}
+
+.page-profile .profile-brief {
+  margin-top: 20px;
+}
+
+.page-profile .profile-uploaded {
+  float: left;
+  width: 100%;
+  max-width: 220px;
+  max-height: 150px;
+  padding: 0 20px 20px 0;
+}
+
+.my-block {
+    display: inline-block;
+    width: 300px;
+    border: 1px solid #ccc4c4;
+    padding: 20px 0;
+    margin: 0;
+    border-radius: 5px;
+    background: #f1f4f5;
+}
+.col-md-4.my-block2 {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+.top-table {
+text-align: center;
+padding: 20px 0;
+}
+.top-text {
+    border: 1px solid #bfb8b8;
+    padding: 10px;
+    border-radius: 5px;
+    background: #3e8ef7;
+    color: #fff;
+    font-weight: normal;
+}
+.my-list-table {
+color:#fff;
+font-weight: bold;
+}
+.middle-table {
+    text-align: center;
+    padding: 0px;
+    margin: 10px 0;
+}
+.my-block3{
+text-align: left;
+    padding: 5px;
+}
+.col-md-4.my-block2:nth-child(1), .my-block:nth-child(1) {
+    background: #aadcec;
+}
+.col-md-4.my-block2:nth-child(2), .my-block:nth-child(2) {
+    background: #edf164;
+}.col-md-4.my-block2:nth-child(3), .my-block:nth-child(3) {
+    background: #c25ab4;
+}
+
+.card.card-shadow.text-center{
+position: fixed;
+}
+li.list-group-item.my-list-table a {
+    color: #171717;
+    font-size: 15px;
+    font-weight: 400;
+}

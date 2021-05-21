@@ -1,0 +1,21 @@
+.page-register:before {
+    background-image: url(../../../../demo/bg/bg-11.jpg);
+    background-position-y: -97px !important;
+}
+
+.page-register form {
+    width: 340px;
+    margin: 22px auto;
+}
+
+@media (max-width: 479px) {
+    .page-register form {
+        width: auto;
+    }
+
+    .page-register:before {
+        background-image: url(../../../../demo/bg/bg-11.jpg);
+        background-position-y: -97px !important;
+        background-repeat: no-repeat;
+    }
+}

@@ -1,0 +1,481 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block content %}
+<body data-mobile-nav-trigger-alignment="right" data-mobile-nav-align="left" data-mobile-nav-style="minimal" data-mobile-nav-shceme="gray" data-mobile-header-scheme="gray" data-mobile-nav-breakpoint="1199">
+<div id="wrap">
+<header class="main-header main-header-overlay bg-white" data-sticky-header="true">
+<div class="mainbar-wrap">
+<div class="container mainbar-container">
+<div class="mainbar">
+<div class="row mainbar-row align-items-lg-stretch">
+<div class="col">
+<div class="navbar-header">
+<a class="navbar-brand" href="{% url 'home' %}" rel="home">
+<span class="navbar-brand-inner">
+<img class="logo-default" src="{% static 'img/logo/favicon.png' %}" alt="Ave HTML Template">
+</span>
+</a>
+<button type="button" class="navbar-toggle collapsed nav-trigger style-mobile" data-toggle="collapse" data-target="#main-header-collapse" aria-expanded="false" data-changeclassnames='{ "html": "mobile-nav-activated overflow-hidden" }'>
+<span class="sr-only">Toggle navigation</span>
+<span class="bars">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</span>
+</button>
+</div>
+</div>
+<div class="col text-right">
+<div class="collapse navbar-collapse" id="main-header-collapse" aria-expanded="false" role="tablist">
+<ul id="primary-nav" class="main-nav ld_header_menu_5c51ac47950e6 nav align-items-lg-stretch justify-content-lg-end" data-submenu-options='{ "toggleType": "fade", "handler": "mouse-in-out" }'>
+<li>
+<a href="#">
+<span class="txt">{% trans "Башкы бет" %}</span>
+</a>
+</li>
+<li>
+<a href="#services">
+<span class="txt">{% trans "Шарттар" %}</span>
+</a>
+</li>
+<li>
+<a href="#about">
+<span class="txt">{% trans "Биз жөнүндө" %}</span>
+</a>
+</li>
+<li>
+<a href="#instagram">
+<span class="txt">Instagram</span>
+</a>
+</li>
+<li>
+<a href="#contacts">
+<span class="txt">{% trans "Байланыш" %}</span>
+</a>
+</li>
+{% if user.is_authenticated %}
+<li>
+<a href="{% url 'user_detail' user.pk %}">
+<span class="txt">Профиль</span>
+</a>
+</li>
+<li>
+<a href="{% url 'logout' %}">
+<span class="txt">{% trans "Чыгуу" %}</span>
+</a>
+</li>
+{% else %}
+<li>
+<a href="{% url 'signup' %}">
+<span class="txt">{% trans "Катталуу" %}</span>
+</a>
+</li>
+<li>
+<a href="{% url 'login' %}">
+<span class="txt">{% trans "Кирүү" %}</span>
+</a>
+</li>
+{% endif %}
+
+            <li>
+            <div class="ld-dropdown-menu" style="padding:20px">
+            {% if LANGUAGE_CODE == 'ru' %}
+
+<span class="ld-module-trigger collapsed" role="button" data-ld-toggle="true" data-toggle="collapse" data-target="#header-dropdown-1" aria-controls="header-dropdown-1" aria-expanded="false">
+<span class="ld-module-trigger-txt"><span style="margin-right: 5px">RU </span><img src="{% static 'img/ru.png' %}" alt="" class="flag-icon flag-icon-ru"></span>
+</span>
+{% else %}
+<span class="ld-module-trigger collapsed" role="button" data-ld-toggle="true" data-toggle="collapse" data-target="#header-dropdown-1" aria-controls="header-dropdown-1" aria-expanded="false">
+<span class="ld-module-trigger-txt"><span style="margin-right: 5px">KG </span><img src="{% static 'img/kg.png' %}" alt="" class="flag-icon flag-icon-kg"></span>
+</span>
+{% endif %}
+<div class="ld-module-dropdown left collapse" id="header-dropdown-1" aria-expanded="false" role="tablist" style="">
+<div class="ld-dropdown-menu-content">
+<ul>
+ {% get_available_languages as languages %}
+
+{% for lang_code, lang_name in languages %}
+
+    {% language lang_code %}
+<li><a href="{% url 'home'  %}">{{ lang_name }}</a></li>
+{% endlanguage %}
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main id="content" class="content">
+
+<section class="vc_row fullheight d-flex flex-wrap align-items-center bg-cover bg-center py-6" data-row-bg="{% static 'demo/bg/bg-10.jpg' %}">
+<span class="row-bg-loader"></span>
+<div class="container">
+<div class="row">
+<div class="lqd-column col-md-7" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview","animationTarget":"all-childs","duration":"1200","delay":"150","easing":"easeOutQuint","direction":"forward","initValues":{"translateY":91, "opacity": 0},"animations":{"translateY":0, "opacity": 1}}'>
+<h2 class="text-white mask-text font-weight-bold mt-4 pr-md-7" data-fittext="true" data-fittext-options='{ "compressor":0.5,"maxFontSize": 55,"minFontSize": 36 }' data-split-text="true" data-split-options='{"type":"lines"}'>{% trans "Кыргыз Оймолоруна Кош Келиниз" %}</h2>
+<a href="{% url 'signup' %} " class="btn btn-solid semi-round btn-bordered border-thin">
+<span>
+<span class="btn-txt">{% trans "Катталуу" %}</span>
+<span class="btn-icon"><i class="fa fa-angle-right"></i></span>
+</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="vc_row pt-50 pb-10" id="services" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview","animationTarget":".lqd-column","duration":"1200","delay":"180","easing":"easeOutQuint","direction":"forward","initValues":{"translateY":60,"opacity":0},"animations":{"translateY":0,"opacity":1}}'>
+<div class="container">
+<div class="row">
+<div class="lqd-column col-md-8 col-md-offset-2">
+<header class="fancy-title text-center mb-50">
+<h2>{% trans "Биздин шарттар" %}</h2>
+<p class="font-size-18 lh-16 px-md-6">{% blocktrans %}"Кыргыз Оймолору" буюрса баары жер төшөктүү болот! Жеңилдетилген МП. Болгону 3 этаптан турат. {% endblocktrans %}</p>
+</header>
+</div>
+</div>
+<div class="row">
+<div class="lqd-column col-md-4">
+<div class="iconbox shart iconbox-circle iconbox-sm iconbox-heading-xs border-gray border-gray px-5 py-5">
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<i class="fa fa-arrow-right"></i>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "1 Баскыч" %}</h3>
+<p>{% blocktrans %}1-баскычта 1600 жазылып 1-2-этаптын белегин алсаңыз болот.{% endblocktrans %}</p>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-4">
+<div class="iconbox shart iconbox-circle iconbox-sm iconbox-heading-xs border-gray border-gray px-5 py-5">
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<i class="fa fa-address-book-o"></i>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "2 Баскыч" %}</h3>
+<p>{% blocktrans %}2-баскычта 3 кишиге жарнамалап кошосуз.{% endblocktrans %}</p>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-4">
+<div class="iconbox shart iconbox-circle iconbox-sm iconbox-heading-xs border-gray border-gray px-5 py-5">
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<i class="fa fa-gift"></i>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "3 Баскыч" %}</h3>
+<p>{% blocktrans %}3-баскычта командага 9 киши жазылганда  Сиз жер төшөктүү болосуз! Мадонна алсаңыз 4 даана, Королевский алсаңыз 4 даана (12 жөлөнгүчү менен) алсаңыз болот.{% endblocktrans %}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="vc_row pt-0 pb-0">
+	<header class="fancy-title mb-60 text-center" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview","animationTarget":"all-childs","duration":"1200","delay":"150","easing":"easeOutQuint","direction":"forward","initValues":{"translateY":57,"opacity":0},"animations":{"translateY":0,"opacity":1}}'>
+
+<h4>{% trans "Каттоо үчүн милдеттүү шарттар:" %}</h4>
+</header>
+<div class="container">
+<div class="row" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview","animationTarget":".lqd-column","duration":"1200","delay":"160","easing":"easeOutQuint","direction":"forward","initValues":{"translateY":40,"opacity":0},"animations":{"translateY":0,"opacity":1}}'>
+<div class="lqd-column col-md-3 col-sm-6 mb-50">
+<div class="iconbox iconbox-xl iconbox-heading-sm" data-animate-icon="true" data-plugin-options='{"color": "#d75b92"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"> <defs xmlns="http://www.w3.org/2000/svg"> <linearGradient gradientUnits="userSpaceOnUse" id="grad414533" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset="0%" stop-color="#d75b92"></stop> <stop offset="100%" stop-color="#d75b92"></stop> </linearGradient> </defs> <g> <path fill="none" stroke="url(#grad414533)" stroke-width="2" stroke-miterlimit="10" d="M28,19.001A4,4 0,1,1 36,19.001A4,4 0,1,1 28,19.001" style="stroke-dasharray: 26, 28; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad414533)" stroke-width="2" stroke-miterlimit="10" d="M45,21.023C44.968,13.276,39.181,7,32,7 s-13,6.276-13,14.023C19,31.046,31.979,47,31.979,47S45.043,31.046,45,21.023z" style="stroke-dasharray: 102, 104; stroke-dashoffset: 0;"></path> </g> <path fill="none" stroke="url(#grad414533)" stroke-width="2" stroke-miterlimit="10" d="M21,37L12,37L1,57L32,57L63,57L52,37L43,37" style="stroke-dasharray: 126, 128; stroke-dashoffset: 0;"></path> </svg>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "Сайт аркылуу каттоо: www.kyrgyzoymoloru.kg" %}</h3>
+<p></p>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-3 col-sm-6 mb-50">
+<div class="iconbox iconbox-xl iconbox-heading-sm" data-animate-icon="true" data-plugin-options='{"color": "#d75b92"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"><defs xmlns="http://www.w3.org/2000/svg"><linearGradient gradientUnits="userSpaceOnUse" id="grad230052" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="rgb(215, 91, 146)"></stop><stop offset="100%" stop-color="rgb(215, 91, 146)"></stop></linearGradient></defs> <g> <path fill="none" stroke="url(#grad230052)" stroke-width="2" stroke-miterlimit="10" d="M46,10L18,10" style="stroke-dasharray: 28, 30; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad230052)" stroke-width="2" stroke-miterlimit="10" d="M12,10L1,10L1,58L63,58L63,10L52,10" style="stroke-dasharray: 180, 182; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad230052)" stroke-width="2" stroke-miterlimit="10" d="M12 6 L18 6 L18 14 L12 14 Z" style="stroke-dasharray: 28, 30; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad230052)" stroke-width="2" stroke-miterlimit="10" d="M46 6 L52 6 L52 14 L46 14 Z" style="stroke-dasharray: 28, 30; stroke-dashoffset: 0;"></path> </g> <path fill="none" stroke="url(#grad230052)" stroke-width="2" stroke-miterlimit="10" d="M32,29L32,47" style="stroke-dasharray: 18, 20; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad230052)" stroke-width="2" stroke-miterlimit="10" d="M41,38L23,38" style="stroke-dasharray: 18, 20; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad230052)" stroke-width="2" stroke-miterlimit="10" d="M1,18L63,18" style="stroke-dasharray: 62, 64; stroke-dashoffset: 0;"></path> </svg>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "Акы төлөө жөнүндө текшерүү(Сүрөт)" %}</h3>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-3 col-sm-6 mb-50">
+<div class="iconbox iconbox-xl iconbox-heading-sm" data-animate-icon="true" data-plugin-options='{"color": "#d75b92"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"><defs xmlns="http://www.w3.org/2000/svg"><linearGradient gradientUnits="userSpaceOnUse" id="grad587722" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="rgb(215, 91, 146)"></stop><stop offset="100%" stop-color="rgb(215, 91, 146)"></stop></linearGradient></defs> <path fill="none" stroke="url(#grad587722)" stroke-width="2" stroke-miterlimit="10" d="M1 11 L63 11 L63 53 L1 53 Z" style="stroke-dasharray: 208, 210; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad587722)" stroke-width="2" stroke-miterlimit="10" d="M1,17L63,17" style="stroke-dasharray: 62, 64; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad587722)" stroke-width="2" stroke-miterlimit="10" d="M1,25L63,25" style="stroke-dasharray: 62, 64; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad587722)" stroke-width="2" stroke-miterlimit="10" d="M6,47L10,47" style="stroke-dasharray: 4, 6; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad587722)" stroke-width="2" stroke-miterlimit="10" d="M12,47L41,47" style="stroke-dasharray: 29, 31; stroke-dashoffset: 0;"></path> </svg>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "Телефон <br>номуру " %} </h3>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-3 col-sm-6 mb-50">
+<div class="iconbox iconbox-xl iconbox-heading-sm" data-animate-icon="true" data-plugin-options='{"color": "#d75b92"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"><defs xmlns="http://www.w3.org/2000/svg"><linearGradient gradientUnits="userSpaceOnUse" id="grad732537" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="rgb(215, 91, 146)"></stop><stop offset="100%" stop-color="rgb(215, 91, 146)"></stop></linearGradient></defs> <path fill="none" stroke="url(#grad732537)" stroke-width="2" stroke-miterlimit="10" d="M1,25L12,59L52,59L63,25Z" style="stroke-dasharray: 174, 176; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad732537)" stroke-width="2" stroke-miterlimit="10" d="M14,25L22,5" style="stroke-dasharray: 22, 24; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad732537)" stroke-width="2" stroke-miterlimit="10" d="M50,25L42,5" style="stroke-dasharray: 22, 24; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad732537)" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10" d="M23,41L30,48L 43,35" style="stroke-dasharray: 29, 31; stroke-dashoffset: 0;"></path> </svg>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "Паспорттук <br> маалыматтары" %}</h3>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-3 col-sm-6 mb-50">
+<div class="iconbox iconbox-xl iconbox-heading-sm" data-animate-icon="true" data-plugin-options='{"color": "#d75b92"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"><defs xmlns="http://www.w3.org/2000/svg"><linearGradient gradientUnits="userSpaceOnUse" id="grad7331" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="rgb(215, 91, 146)"></stop><stop offset="100%" stop-color="rgb(215, 91, 146)"></stop></linearGradient></defs> <g> <path fill="none" stroke="url(#grad7331)" stroke-width="2" stroke-miterlimit="10" d="M1,32A31,31 0,1,1 63,32A31,31 0,1,1 1,32" style="stroke-dasharray: 195, 197; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad7331)" stroke-width="2" stroke-miterlimit="10" d="M24,32A8,8 0,1,1 40,32A8,8 0,1,1 24,32" style="stroke-dasharray: 51, 53; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad7331)" stroke-width="2" stroke-miterlimit="10" d="M32,48c-8.838,0-16-7.16-16-16" style="stroke-dasharray: 26, 28; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad7331)" stroke-width="2" stroke-miterlimit="10" d="M32.002,48" style="stroke-dasharray: 0, 2; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad7331)" stroke-width="2" stroke-miterlimit="10" d="M32,16c8.838,0,16,7.162,16,16" style="stroke-dasharray: 26, 28; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad7331)" stroke-width="2" stroke-miterlimit="10" d="M32,9" style="stroke-dasharray: 0, 2; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad7331)" stroke-width="2" stroke-miterlimit="10" d="M32.003,55C19.299,55,9,44.707,9,32" style="stroke-dasharray: 37, 39; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad7331)" stroke-width="2" stroke-miterlimit="10" d="M32.003,55" style="stroke-dasharray: 0, 2; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad7331)" stroke-width="2" stroke-miterlimit="10" d="M55,32.002" style="stroke-dasharray: 0, 2; stroke-dashoffset: 0;"></path> <path fill="none" stroke="url(#grad7331)" stroke-width="2" stroke-miterlimit="10" d="M32,9c12.704,0,23,10.295,23,23" style="stroke-dasharray: 37, 39; stroke-dashoffset: 0;"></path> </g> </svg>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "Сапаттуу белек кенен тандоо." %}</h3>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-3 col-sm-6 mb-50">
+<div class="iconbox iconbox-xl iconbox-heading-sm" data-animate-icon="true" data-plugin-options='{"color": "#d75b92"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"><defs xmlns="http://www.w3.org/2000/svg"><linearGradient gradientUnits="userSpaceOnUse" id="grad909663" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="rgb(215, 91, 146)"></stop><stop offset="100%" stop-color="rgb(215, 91, 146)"></stop></linearGradient></defs> <g> <path fill="none" stroke="url(#grad909663)" stroke-width="2" stroke-miterlimit="10" d="M24,30c0,4.418,3.582,8,8,8s8-3.582,8-8"></path> <line fill="none" stroke="url(#grad909663)" stroke-width="2" stroke-miterlimit="10" x1="18" y1="20" x2="20" y2="20"></line> <line fill="none" stroke="url(#grad909663)" stroke-width="2" stroke-miterlimit="10" x1="46" y1="20" x2="44" y2="20"></line> <polygon fill="none" stroke="url(#grad909663)" stroke-width="2" stroke-miterlimit="10" points="32,47 63,47 63,5 1,5 1,47 18,47 18,59 "></polygon> </g> </svg>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "Филиалдар 30 шаарларда бар." %}</h3>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-3 col-sm-6 mb-50">
+<div class="iconbox iconbox-xl iconbox-heading-sm" data-animate-icon="true" data-plugin-options='{"color": "#d75b92"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"><defs xmlns="http://www.w3.org/2000/svg"><linearGradient gradientUnits="userSpaceOnUse" id="grad374142" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="rgb(215, 91, 146)"></stop><stop offset="100%" stop-color="rgb(215, 91, 146)"></stop></linearGradient></defs> <rect x="1" y="7" fill="none" stroke="url(#grad374142)" stroke-width="2" stroke-miterlimit="10" width="62" height="50"></rect> <line fill="none" stroke="url(#grad374142)" stroke-width="2" stroke-miterlimit="10" x1="1" y1="15" x2="63" y2="15"></line> <line fill="none" stroke="url(#grad374142)" stroke-width="2" stroke-miterlimit="10" x1="10" y1="11" x2="6" y2="11"></line> <line fill="none" stroke="url(#grad374142)" stroke-width="2" stroke-miterlimit="10" x1="18" y1="11" x2="14" y2="11"></line> <line fill="none" stroke="url(#grad374142)" stroke-width="2" stroke-miterlimit="10" x1="26" y1="11" x2="22" y2="11"></line> </svg>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "Сиз 5 жумушчу күндүн ичинде сыйлык аласынар." %}</h3>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-3 col-sm-6 mb-50">
+<div class="iconbox iconbox-xl iconbox-heading-sm" data-animate-icon="true" data-plugin-options='{"color": "#d75b92"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"><defs xmlns="http://www.w3.org/2000/svg"><linearGradient gradientUnits="userSpaceOnUse" id="grad561928" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="rgb(215, 91, 146)"></stop><stop offset="100%" stop-color="rgb(215, 91, 146)"></stop></linearGradient></defs> <path fill="none" stroke="url(#grad561928)" stroke-width="2" stroke-miterlimit="10" d="M16,27c0,4.418,6.059,8,16,8s16-3.582,16-8V1H16V27z "></path> <line fill="none" stroke="url(#grad561927)" stroke-width="2" stroke-miterlimit="10" x1="20" y1="63" x2="44" y2="63"></line> <line fill="none" stroke="url(#grad561928)" stroke-width="2" stroke-miterlimit="10" x1="32" y1="35" x2="32" y2="63"></line> <path fill="none" stroke="url(#grad561928)" stroke-width="2" stroke-miterlimit="10" d="M16,7H7c0,0,0,9,9,9"></path> <path fill="none" stroke="url(#grad561928)" stroke-width="2" stroke-miterlimit="10" d="M48,7h9c0,0,0,9-9,9"></path> </svg>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "Катталгандан кийин, акча кайтарылып берилбейт." %}</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+<section class="vc_row pt-40 pb-100 mt-20 bg-cover" id="about" style="background-image: url(/static/demo/bg/bg-11.jpg);">
+<div class="container">
+<div class="row">
+<div class="lqd-column about-text col-md-8 col-md-offset-2">
+<header class="fancy-title-about text-center mb-0">
+<h2 class="text-white">{% trans "Биз жөнүндө" %}</h2>
+</header>
+<div class="carousel-container carousel-nav-left carousel-nav-md carousel-dots-style2 carousel-dots-light">
+<div class="carousel-items row" data-lqd-flickity='{"cellAlign":"center","prevNextButtons":false,"buttonsAppendTo":"self","pageDots":true,"groupCells":true,"wrapAround":true,"pauseAutoPlayOnHover":false}'>
+<div class="carousel-item text-center col-xs-12">
+<h5 class="text-white mb-0">«Кыргыз Оймолору»</h5>
+<br>
+<p class="text-white font-size-18 lh-175 opacity-10">{% blocktrans %}"Кыргыз оймолору" компаниясы
+2018-жылдын 31-августта Сыдыков Нуртилек Маманович жана анын жубайы Наргиза Ураимовалар тарабынан негизделген.
+"Кыргыз оймолору"компаниясынын максаты: Кыргыздардын улуттук каада салтын, оймо чийме онорчулугун  унутта калтырбоо максатында негизделген. Кыргыздардын улуттук баалуулуктарын оймолор аркылуу буткул орто азия элдерине, андан ары азияга таанытуу.  Сиздердин жана биздин аракетибиз менен,  жада калса буткул дуйного таанытып таратабыз. Ишиниздерге ийгилик, үй бүлөөнүздөргө бакубат жашоо, Кыргызстаныбыз өркүндөп осо берсин деп «Кыргыз Оймолору» компаниясы!{% endblocktrans %}</p>
+<p class="text-white font-size-18 lh-175 opacity-10">{% trans "Терен урматтоо менен, биздин «Кыргыз Оймолору» компаниясына чакырабыз!" %}<p class="text-white font-size-18 lh-175 opacity-10">{% trans "Кош келиниздер урматтуу мекендештер!" %}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+<section class="vc_row pt-60 pb-60">
+<div class="container">
+<div class="row" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview","animationTarget":".lqd-column","duration":"1200","delay":"200","easing":"easeOutQuint","direction":"backward","initValues":{"translateX":35,"translateY":35,"opacity":0},"animations":{"translateX":0,"translateY":0,"opacity":1}}'>
+<div class="lqd-column col-md-4">
+<div class="iconbox iconbox-side iconbox-sm iconbox-heading-sm" data-plugin-options='{"color": "#dd6a9d"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<i class="icon-software_layers2"></i>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "КАГАЗГА ТҮШҮРҮҮ" %}</h3>
+<p>{% blocktrans %}Жаратман команданын ойлоп тапкан оймолорун Кыргыздын менталитетинен жана оймо чийме философиясына туура келгендей кылып кагазка түшүрүү{% endblocktrans %}</p>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-4">
+<div class="iconbox iconbox-side iconbox-sm iconbox-heading-sm" data-plugin-options='{"color": "#dd6a9d"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<i class="icon-software_layers2"></i>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "ЭСКИЗДЕРДИ ТАБУУ" %}</h3>
+<p>{% blocktrans %}Ар кандай формадагы, эл арасында жүргөн эскиздерди табуу.{% endblocktrans %}</p>
+</div>
+</div>
+</div>
+<div class="lqd-column col-md-4">
+<div class="iconbox iconbox-side iconbox-sm iconbox-heading-sm" data-plugin-options='{"color": "#dd6a9d"}'>
+<div class="iconbox-icon-wrap">
+<span class="iconbox-icon-container">
+<i class="icon-software_layers2"></i>
+</span>
+</div>
+<div class="contents">
+<h3>{% trans "ЖАҢЫЧА ТҮРЛӨРҮН ОЙЛОП ТАБУУ" %}</h3>
+<p>{% blocktrans %}Чогултулган жана жаңы ойлоп табылган оймолорду колдонуп жаңыча түрлөрүн ойлоп табуу.{% endblocktrans %}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="vc_row pt-100 pb-110 bg-cover" style="background-image: url(/static/demo/bg/ddddjj.jpg);" data-parallax="true" data-parallax-options='{ "parallaxBG": true }'>
+<div class="container">
+<div class="row">
+<div class="lqd-column col-md-4 col-sm-6 text-center">
+<div class="liquid-counter liquid-counter-default text-white text-center">
+<div class="liquid-counter-element mb-2" data-fittext="true" data-fittext-options='{ "compressor": 0.5, "minFontSize": 70, "maxFontSize": 70 }' data-enable-counter="true" data-counter-options='{"targetNumber":"7500+","blurEffect":true}'>
+<span>700+</span>
+</div>
+<span class="liquid-counter-text liquid-text-bottom" style="font-size: 20px">{% trans "Катышуучулар" %}</span>
+</div>
+</div>
+<div class="lqd-column col-md-4 col-sm-6 text-center">
+<div class="liquid-counter liquid-counter-default text-white text-center">
+<div class="liquid-counter-element mb-2" data-fittext="true" data-fittext-options='{ "compressor": 0.5, "minFontSize": 70, "maxFontSize": 70 }' data-enable-counter="true" data-counter-options='{"targetNumber":"9000+","blurEffect":true}'>
+<span>217</span>
+</div>
+<span class="liquid-counter-text liquid-text-bottom" style="font-size: 20px">{% trans "Белектер" %}</span>
+</div>
+</div>
+<div class="lqd-column col-md-4 col-sm-6 text-center">
+<div class="liquid-counter liquid-counter-default text-white text-center">
+<div class="liquid-counter-element mb-2" data-fittext="true" data-fittext-options='{ "compressor": 0.5, "minFontSize": 70, "maxFontSize": 70 }' data-enable-counter="true" data-counter-options='{"targetNumber":"100%","blurEffect":true}'>
+<span>100%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!--Instagram-->
+    <section id="instagram" class="bglight padding" id="instagram">
+        <div class="container-fluid px-0">
+            <div class="row">
+                <div class="col-md-12 offset-md-2 col-sm-12 text-center">
+                    <div class="heading-title wow fadeInUp" data-wow-delay="300ms">
+                        <h2 class="darkcolor bottom10">Instagram</h2>
+
+                         <p class="font-size-18 lh-16 px-md-6">
+                         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-586af6a6-992e-4270-887b-a1959af2e6c8"></div></p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Instagram -->
+
+
+<section class="vc_row pt-15 pb-15 bg-cover" id="contacts" style="background-image: url(/static/demo/bg/bg-13.jpg)">
+<div class="container">
+<div class="row d-flex flex-wrap align-items-center">
+<div class="lqd-column col-md-9 text-center text-md-left">
+<h2 class="text-white mt-0 mb-3 mb-md-0" data-fittext="true" data-fittext-options='{"compressor": 0.65, "maxFontSize": 37, "minFontSize": 33}'>{% blocktrans %} Сизге жаккан болсо, <br>келиниз уйунузду чогуу жасайлы! {% endblocktrans %}</h2>
+</div>
+<div class="lqd-column col-md-3 text-center text-md-right">
+<a href="{% url 'signup' %}" class="btn btn-solid text-uppercase semi-round btn-bordered border-thin bg-white text-dark bg-hover-dark text-hover-white btn-light font-size-12 lh-15 px-1">
+<span class="btn-txt">{% trans "Катталуу" %}</span>
+<span class="btn-icon"><i class="fa fa-angle-right"></i></span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="main-footer bg-shark pt-90">
+<section>
+<div class="container">
+<div class="row d-flex flex-wrap">
+<div class="lqd-column col-md-6 col-sm-6">
+<h3 class="widget-title text-white">«Кыргыз Оймолору»</h3>
+<hr>
+<p>{% blocktrans %}Терен урматтоо менен, биздин <b>«Кыргыз Оймолору»</b> <br>компаниясына чакырабыз! <br>Кош келиниздер урматтуу мекендештер! {% endblocktrans %} </p>
+</div>
+
+
+<div class="lqd-column col-md-6 col-sm-6">
+<h3 class="widget-title text-white">{% trans "Биздин даректер" %}</h3>
+<p class="mb-4">
+	<hr>
+Телефон: 0 (773) 06-98-58, 0 (773) 91-91-01, 0 (703) 35-50-50<br>
+<br>
+E-Mail : kyrgyzoimoloru@mail.ru <br>
+</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="bt-fade-white-015 bg-dark pt-25 pb-25 mt-50">
+<div class="container">
+<div class="row">
+<div class="lqd-column col-md-12 text-center">
+<p class="my-0">Разработано Web Studio <a href="http:www.infis.kg" style="color:red">Infis</a></p>
+</div>
+</div>
+</div>
+</section>
+</footer>
+
+</div>
+{% endblock %}

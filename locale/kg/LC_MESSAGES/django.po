@@ -1,0 +1,445 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-22 12:58+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: oymo_project/settings.py:121
+msgid "Кыргызча"
+msgstr ""
+
+#: oymo_project/settings.py:122
+msgid "Russian"
+msgstr "Орусча"
+
+#: templates/_base.html:90 templates/_base.html:182
+msgid "Вебсайт"
+msgstr ""
+
+#: templates/_base.html:97
+#, fuzzy
+#| msgid "Колдонуучулардын тизмеси"
+msgid "Катталгандар тизмеси"
+msgstr "Колдонуучулардын тизмеси"
+
+#: templates/_base.html:105
+msgid "Тастыкталуу учун"
+msgstr ""
+
+#: templates/_base.html:113 templates/_base.html:205 templates/home.html:393
+#: templates/user_details.html:140
+msgid "Белектер"
+msgstr ""
+
+#: templates/_base.html:121 templates/_base.html:213
+msgid "Офистер"
+msgstr ""
+
+#: templates/_base.html:163
+msgid "Поменять пароль"
+msgstr ""
+
+#: templates/_base.html:189
+msgid "Катталгандар"
+msgstr ""
+
+#: templates/_base.html:197 templates/home.html:70 templates/home.html:126
+#: templates/home.html:435 templates/registration/signup.html:71
+msgid "Катталуу"
+msgstr ""
+
+#: templates/home.html:33
+msgid "Башкы бет"
+msgstr ""
+
+#: templates/home.html:38
+msgid "Шарттар"
+msgstr ""
+
+#: templates/home.html:43 templates/home.html:307
+msgid "Биз жөнүндө"
+msgstr ""
+
+#: templates/home.html:53
+msgid "Байланыш"
+msgstr ""
+
+#: templates/home.html:64
+msgid "Чыгуу"
+msgstr ""
+
+#: templates/home.html:75 templates/registration/login.html:90
+msgid "Кирүү"
+msgstr ""
+
+#: templates/home.html:123
+msgid "Кыргыз Оймолоруна Кош Келиниз"
+msgstr ""
+
+#: templates/home.html:141
+msgid "Биздин шарттар"
+msgstr ""
+
+#: templates/home.html:142
+msgid ""
+"\"Кыргыз Оймолору\" буюрса баары жер төшөктүү болот! Жеңилдетилген МП. "
+"Болгону 3 этаптан турат. "
+msgstr ""
+
+#: templates/home.html:155
+msgid "1 Баскыч"
+msgstr ""
+
+#: templates/home.html:156
+msgid "1-баскычта 1600 жазылып 1-2-этаптын белегин алсаңыз болот."
+msgstr ""
+
+#: templates/home.html:168
+msgid "2 Баскыч"
+msgstr ""
+
+#: templates/home.html:169
+msgid "2-баскычта 3 кишиге жарнамалап кошосуз."
+msgstr ""
+
+#: templates/home.html:181
+msgid "3 Баскыч"
+msgstr ""
+
+#: templates/home.html:182
+msgid ""
+"3-баскычта командага 9 киши жазылганда  Сиз жер төшөктүү болосуз! Мадонна "
+"алсаңыз 4 даана, Королевский алсаңыз 4 даана (12 жөлөнгүчү менен) алсаңыз "
+"болот."
+msgstr ""
+
+#: templates/home.html:194
+msgid "Каттоо үчүн милдеттүү шарттар:"
+msgstr ""
+
+#: templates/home.html:206
+msgid "Сайт аркылуу каттоо: www.kyrgyzoymoloru.kg"
+msgstr ""
+
+#: templates/home.html:219
+msgid "Акы төлөө жөнүндө текшерүү(Сүрөт)"
+msgstr ""
+
+#: templates/home.html:231
+msgid "Телефон <br>номуру "
+msgstr ""
+
+#: templates/home.html:243
+msgid "Паспорттук <br> маалыматтары"
+msgstr ""
+
+#: templates/home.html:255
+msgid "Сапаттуу белек кенен тандоо."
+msgstr ""
+
+#: templates/home.html:267
+msgid "Филиалдар 30 шаарларда бар."
+msgstr ""
+
+#: templates/home.html:279
+msgid "Сиз 5 жумушчу күндүн ичинде сыйлык аласынар."
+msgstr ""
+
+#: templates/home.html:291
+msgid "Катталгандан кийин, акча кайтарылып берилбейт."
+msgstr ""
+
+#: templates/home.html:314
+msgid ""
+"\"Кыргыз оймолору\" компаниясы\n"
+"2018-жылдын 31-августта Сыдыков Нуртилек Маманович жана анын жубайы Наргиза "
+"Ураимовалар тарабынан негизделген.\n"
+"\"Кыргыз оймолору\"компаниясынын максаты: Кыргыздардын улуттук каада салтын, "
+"оймо чийме онорчулугун  унутта калтырбоо максатында негизделген. "
+"Кыргыздардын улуттук баалуулуктарын оймолор аркылуу буткул орто азия "
+"элдерине, андан ары азияга таанытуу.  Сиздердин жана биздин аракетибиз "
+"менен,  жада калса буткул дуйного таанытып таратабыз. Ишиниздерге ийгилик, "
+"үй бүлөөнүздөргө бакубат жашоо, Кыргызстаныбыз өркүндөп осо берсин деп "
+"«Кыргыз Оймолору» компаниясы!"
+msgstr ""
+
+#: templates/home.html:317
+msgid "Терен урматтоо менен, биздин «Кыргыз Оймолору» компаниясына чакырабыз!"
+msgstr ""
+
+#: templates/home.html:317
+msgid "Кош келиниздер урматтуу мекендештер!"
+msgstr ""
+
+#: templates/home.html:341
+msgid "КАГАЗГА ТҮШҮРҮҮ"
+msgstr ""
+
+#: templates/home.html:342
+msgid ""
+"Жаратман команданын ойлоп тапкан оймолорун Кыргыздын менталитетинен жана "
+"оймо чийме философиясына туура келгендей кылып кагазка түшүрүү"
+msgstr ""
+
+#: templates/home.html:354
+msgid "ЭСКИЗДЕРДИ ТАБУУ"
+msgstr ""
+
+#: templates/home.html:355
+msgid "Ар кандай формадагы, эл арасында жүргөн эскиздерди табуу."
+msgstr ""
+
+#: templates/home.html:367
+msgid "ЖАҢЫЧА ТҮРЛӨРҮН ОЙЛОП ТАБУУ"
+msgstr ""
+
+#: templates/home.html:368
+msgid ""
+"Чогултулган жана жаңы ойлоп табылган оймолорду колдонуп жаңыча түрлөрүн "
+"ойлоп табуу."
+msgstr ""
+
+#: templates/home.html:385
+msgid "Катышуучулар"
+msgstr ""
+
+#: templates/home.html:431
+msgid " Сизге жаккан болсо, <br>келиниз уйунузду чогуу жасайлы! "
+msgstr ""
+
+#: templates/home.html:451
+msgid ""
+"Терен урматтоо менен, биздин <b>«Кыргыз Оймолору»</b> <br>компаниясына "
+"чакырабыз! <br>Кош келиниздер урматтуу мекендештер! "
+msgstr ""
+
+#: templates/home.html:456
+msgid "Биздин даректер"
+msgstr ""
+
+#: templates/office_create.html:9 templates/office_list.html:27
+msgid "Офис кошуу"
+msgstr ""
+
+#: templates/office_create.html:15 templates/office_update.html:17
+#: templates/present_create.html:28
+#: templates/registration/password_change_form.html:16
+#: templates/user_update.html:124
+msgid "Сактоо"
+msgstr ""
+
+#: templates/office_delete.html:9
+msgid "Чындап очургунуз келеби ?"
+msgstr ""
+
+#: templates/office_delete.html:17
+msgid "Өчүрүү"
+msgstr ""
+
+#: templates/office_list.html:8 templates/office_list.html:20
+msgid "Офистер тизмеси"
+msgstr ""
+
+#: templates/office_list.html:30 templates/user_details.html:106
+#: templates/user_update.html:77
+msgid "Регион"
+msgstr ""
+
+#: templates/office_list.html:31 templates/present_list.html:31
+#: templates/users_list.html:31 templates/waiting_users.html:34
+msgid "Башкаруу"
+msgstr ""
+
+#: templates/office_update.html:9
+msgid "Офисти өзгөртүү"
+msgstr ""
+
+#: templates/present_create.html:9
+#, python-format
+msgid "Кайсыл белек <b>\"%(user_gift)s\"</b> бергиниз келет ?"
+msgstr ""
+
+#: templates/present_list.html:7 templates/present_list.html:18
+#, fuzzy
+#| msgid "Колдонуучулардын тизмеси"
+msgid "Белектер тизмеси"
+msgstr "Колдонуучулардын тизмеси"
+
+#: templates/present_list.html:26 templates/user_details.html:55
+#: templates/user_update.html:29 templates/users_list.html:26
+#: templates/waiting_users.html:26
+msgid "Аты-жөнү"
+msgstr ""
+
+#: templates/present_list.html:27 templates/user_details.html:124
+#: templates/users_list.html:28 templates/waiting_users.html:28
+msgid "Катталган күнү"
+msgstr ""
+
+#: templates/present_list.html:28 templates/user_details.html:88
+#: templates/user_update.html:92 templates/users_list.html:29
+#: templates/waiting_users.html:29
+msgid "Тел номуру"
+msgstr ""
+
+#: templates/present_list.html:29 templates/user_details.html:64
+#: templates/users_list.html:27 templates/waiting_users.html:27
+msgid "Баскычы"
+msgstr ""
+
+#: templates/present_list.html:30
+msgid "Белектери"
+msgstr ""
+
+#: templates/registration/login.html:10
+msgid "Кируу"
+msgstr ""
+
+#: templates/registration/login.html:62
+msgid "Логиниңизди жазып кириңиз"
+msgstr ""
+
+#: templates/registration/login.html:85
+msgid ""
+" Сиз туура эмес логин же пароль жаздыңыз.  <br>\n"
+"                        Кайра башынан жазып көрүңүз. "
+msgstr ""
+
+#: templates/registration/login.html:93
+msgid "Акаунтуңуз жокпу? Сураныч"
+msgstr ""
+
+#: templates/registration/login.html:93
+msgid "кирип катталыңыз"
+msgstr ""
+
+#: templates/registration/signup.html:10
+msgid "Каттоо"
+msgstr ""
+
+#: templates/registration/signup.html:66
+msgid "Биздин сайттан катталыңыз"
+msgstr ""
+
+#: templates/registration/signup.html:75
+msgid "Сизде акаунтуңуз барбы? Анда биздин сайтка"
+msgstr ""
+
+#: templates/registration/signup.html:75
+msgid "кириңиз"
+msgstr ""
+
+#: templates/user_delete.html:8
+msgid "Силер чындап өчүргүңөр келеби? "
+msgstr ""
+
+#: templates/user_delete.html:16
+msgid "Өчурүү"
+msgstr ""
+
+#: templates/user_details.html:31 templates/user_update.html:17
+msgid "Профиль"
+msgstr ""
+
+#: templates/user_details.html:37
+msgid "Логини"
+msgstr ""
+
+#: templates/user_details.html:46 templates/user_update.html:98
+msgid "Статусу"
+msgstr ""
+
+#: templates/user_details.html:73 templates/user_update.html:107
+#: templates/waiting_users.html:31
+msgid "Кимге байланган"
+msgstr ""
+
+#: templates/user_details.html:97 templates/user_update.html:38
+msgid "Дареги"
+msgstr ""
+
+#: templates/user_details.html:115
+msgid "Пасспорт Номуру"
+msgstr ""
+
+#: templates/user_details.html:132
+msgid "Сырсөздү өзгөртүү"
+msgstr ""
+
+#: templates/user_details.html:145
+msgid "Белектин аталышы"
+msgstr ""
+
+#: templates/user_details.html:152
+msgid "Белектин баяндамасы"
+msgstr ""
+
+#: templates/user_details.html:159
+msgid "Берилген күнү"
+msgstr ""
+
+#: templates/user_details.html:172
+msgid "ЭСЕПКЕ КАТТАЛГАНДАР"
+msgstr ""
+
+#: templates/user_update.html:8
+msgid "Профильди оңдоо"
+msgstr ""
+
+#: templates/user_update.html:45
+msgid "Чектин номери"
+msgstr ""
+
+#: templates/user_update.html:51 templates/waiting_users.html:30
+msgid "Чектин сүрөтү"
+msgstr ""
+
+#: templates/user_update.html:59
+msgid "Оператор кылуу"
+msgstr ""
+
+#: templates/user_update.html:70
+msgid "Паспорттун номери"
+msgstr ""
+
+#: templates/users_list.html:7 templates/users_list.html:18
+#: templates/waiting_users.html:18
+msgid "Колдонуучулардын тизмеси"
+msgstr "Колдонуучулардын тизмеси"
+
+#: templates/waiting_users.html:7
+#, fuzzy
+#| msgid "Колдонуучулардын тизмеси"
+msgid "Катталуучулардын тизмеси"
+msgstr "Колдонуучулардын тизмеси"
+
+#: templates/waiting_users.html:32
+#, fuzzy
+#| msgid "Колдонуучулардын тизмеси"
+msgid "Катталгандын саны"
+msgstr "Колдонуучулардын тизмеси"
+
+#: users/models.py:43
+msgid "username"
+msgstr ""
+
+#: users/models.py:46
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+
+#: users/models.py:49
+msgid "A user with that username already exists."
+msgstr ""

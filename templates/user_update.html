@@ -1,0 +1,140 @@
+{% extends '_base.html' %}
+{% block content %}
+    {% load static i18n%}
+
+    <!-- Page -->
+    <div class="page">
+      <div class="page-header">
+        <h1 class="page-title">{% trans "Профильди оңдоо" %}</h1>
+      </div>
+
+      <div class="page-content container-fluid">
+
+
+        <!-- Panel Constraints -->
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">{% trans "Профиль" %}</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row row-lg">
+              <div class="col-lg-6">
+                <!-- Example Basic Constraints -->
+                <div class="example-wrap m-md-0">
+                  <div class="example">
+                    <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                      <div class="form-group row">
+                        <label class="col-md-3 form-control-label">{% trans "Аты-жөнү" %}:</label>
+                        <div class="col-md-9">
+                            <input type="text" data-fv-notempty="true" data-fv-notempty-message="Объязательное поле"  class="form-control" name="username" value="{{object.username }}" maxlength="150" required="" id="id_username">
+<span class="helptext">Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_.</span>
+                        </div>
+                      </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label class="col-md-3 form-control-label">{% trans "Дареги" %}</label>
+                        <div class="col-md-9">
+                        <input type="text" class="form-control" data-fv-notempty="true" data-fv-notempty-message="Объязательное поле" name="address" value="{{object.address }}" maxlength="100" id="id_address">
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label class="col-md-3 form-control-label">{% trans "Чектин номери" %}</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control"  data-fv-notempty="true" data-fv-notempty-message="Объязательное поле" name="check_number" value="{{object.check_number}}" maxlength="30" id="id_check_number">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-md-3 form-control-label">{% trans "Чектин сүрөтү" %}</label>
+                        <div class="col-md-9">
+                        Азырку учурда: {% if object.check_image %}<a href="{{object.check_image.url}}">{{object.check_image}}</a>{%endif%}
+<input type="file" class="form-control" name="check_image" accept="image/*" id="id_check_image"></p>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label class="col-md-3 form-control-label">{% trans "Оператор кылуу" %}</label>
+                        <div class="col-md-9">
+                        <div class="checkbox-custom checkbox-primary">
+                          <input type="checkbox" name="is_staff" id="id_is_staff">
+<label class="helptext" for="id_is_staff">Оператор кылуу үчүн басыңыз.</label>
+                        </div>
+
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label class="col-md-3 form-control-label">{% trans "Паспорттун номери" %}</label>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control" name="passport_number" value="{{object.passport_number}}" maxlength="20" id="id_passport_number">
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label class="col-md-3 form-control-label">{% trans "Регион" %}</label>
+                        <div class="col-md-9">
+                        <select name="office_location" id="id_office_location" class="form-control">
+                            <option value="{{object.office_location.pk}}" selected="">{{object.office_location}}</option>
+                            {% for x in office_list %}
+                            {% if object.office_location == x %}
+                            {% else %}
+                            <option value="{{x.pk}}" >{{x}}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label class="col-md-3 form-control-label" for="id_phone_number">{% trans "Тел номуру" %}</label>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control" name="phone_number" value="{{object.phone_number}}" maxlength="60" id="id_phone_number">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-md-3 form-control-label" for="id_status">{% trans "Статусу" %}</label>
+                        <div class="col-md-9">
+
+                          <input type="checkbox" name="status" id="id_status" {% if object.status %}checked=""{%else%}{%endif%}>
+                        </div>
+                      </div>
+                      {% if object.level == 1 %}
+
+                    <div class="form-group row">
+                        <label class="col-md-3 form-control-label" for="id_by_whom">{% trans "Кимге байланган" %}</label>
+
+               <div class="example-wrap">
+                  <div class="example my-example">
+                    <select data-plugin="select2" data-minimum-input-length="1" name="by_whom" id="id_by_whom" class="form-control">
+                            <option value="{{object.pk}}" >{{object.by_whom.username}}</option>
+                            {% for x in by_whom %}
+                            <option value="{{x.pk}}" >{{x.username}}</option>
+                            {% endfor %}
+                    </select>
+                  </div>
+                </div>
+                {% else %}
+{% endif %}
+                      </div>
+
+                       <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-outline" >{% trans "Сактоо" %}</button>
+
+                       </div>
+                  </form>
+                </div>
+                <!-- End Example Basic Constraints -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Panel Constraints -->
+      </div>
+    </div>
+    </div>
+    <!-- End Page -->
+
+    {% endblock %}

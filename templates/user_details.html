@@ -1,0 +1,243 @@
+{% extends '_base.html' %}
+{% block content %}
+    {% load static i18n %}
+  <!-- Page -->
+    <div class="page">
+      <div class="page-content container-fluid">
+        <div class="row">
+          <div class="col-lg-3">
+            <!-- Page Widget -->
+            <div class="card card-shadow text-center">
+              <div class="card-block">{% if detail.check_image %}
+                <img src="{{ detail.check_image.url}}" alt="" style="max-width: 260px; min-height: 200px;">
+                {% endif %}
+              </div>
+            </div>
+            <!-- End Page Widget -->
+          </div>
+
+          <div class="col-lg-9">
+            <!-- Panel -->
+            <div class="panel">
+              <div class="panel-body nav-tabs-animate nav-tabs-horizontal" data-plugin="tabs">
+
+                <div class="tab-content">
+                  <div class="tab-pane active animation-slide-left" id="activities" role="tabpanel">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <div class="card-block project-participators">
+
+                        <hr>
+                <h2 class="email-more-title">{% trans "Профиль" %}</h2>
+                <hr>
+
+                {% if user.is_staff %}
+                <div class="media">
+                  <div class="pr-20 text-middle">
+                    <span>{% trans "Логини" %}</span>
+                  </div>
+                  <div class="media-body">
+                    <span class="font-size-16 ml-5">{{ detail.username }}</span>
+                  </div>
+                </div>
+                {% endif %}
+                <div class="media mt-0">
+                  <div class="pr-20 text-middle">
+                    <span>{% trans "Статусу" %}</span>
+                  </div>
+                  <div class="media-body">
+                    <span class="font-size-16 ml-5">{{ detail.status|yesno:"Подтвержден, Не подтвержден" }}</span>
+                  </div>
+                </div>
+
+                <div class="media mt-0">
+                  <div class="pr-20 text-middle">
+                    <span>{% trans "Аты-жөнү" %}</span>
+                  </div>
+                  <div class="media-body">
+                    <span class="font-size-16 ml-5">{{ detail.username }}</span>
+                  </div>
+                </div>
+
+                <div class="media">
+                  <div class="pr-20 text-middle">
+                    <span>{% trans "Баскычы" %}</span>
+                  </div>
+                  <div class="media-body">
+                    <span class="font-size-16 ml-5">{{ detail.level }}</span>
+                  </div>
+                </div>
+                {% if user.is_superuser %}
+                <div class="media">
+                  <div class="pr-20 text-middle">
+                    <span>{% trans "Кимге байланган" %}</span>
+                  </div>
+                  <div class="media-body">
+                    <span class="font-size-16 ml-5">
+                    {% if detail.by_whom == None %}
+                    {% else %}
+                        {{ detail.by_whom.username }}
+                    {% endif %}
+                    </span>
+                  </div>
+                </div>
+                {% endif %}
+
+                <div class="media">
+                  <div class="pr-20 text-middle">
+                    <span>{% trans "Тел номуру" %}</span>
+                  </div>
+                  <div class="media-body">
+                    <span class="font-size-16 ml-5">{{ detail.phone_number }}</span>
+                  </div>
+                </div>
+
+                <div class="media">
+                  <div class="pr-20 text-middle">
+                    <span>{% trans "Дареги" %}</span>
+                  </div>
+                  <div class="media-body">
+                    <span class="font-size-16 ml-5">{{ detail.address }}</span>
+                  </div>
+                </div>
+
+                <div class="media">
+                  <div class="pr-20 text-middle">
+                    <span>{% trans "Регион" %}</span>
+                  </div>
+                  <div class="media-body">
+                    <span class="font-size-16 ml-5">{{ detail.office_location }}</span>
+                  </div>
+                </div>
+
+                <div class="media">
+                  <div class="pr-20 text-middle">
+                    <span>{% trans "Пасспорт Номуру" %}</span>
+                  </div>
+                  <div class="media-body">
+                    <span class="font-size-16 ml-5">{{ detail.passport_number }}</span>
+                  </div>
+                </div>
+
+                <div class="media">
+                  <div class="pr-20 text-middle">
+                    <span>{% trans "Катталган күнү" %}</span>
+                  </div>
+                  <div class="media-body">
+                    <span class="font-size-16 ml-5">{{ detail.registration_date }}</span>
+                  </div>
+                </div>
+                <hr>
+                {% if user.is_superuser %}
+                <a href="{% url 'change_pswd' object.pk %}" class="btn btn-danger">{% trans "Сырсөздү өзгөртүү" %}</a>
+                {% endif %}
+              </div>
+                      </li>
+
+                      <li class="list-group-item">
+<hr>
+            <div class="email-more">
+              <h2 class="email-more-title">{% trans "Белектер" %}</h2>
+<hr>
+              <div class="row email-more-content">
+
+                <div class="col-md-4">
+                    <p><b>{% trans "Белектин аталышы" %}</b></p>
+                    <hr>
+                    {% for present in presents %}
+                    <p class="card">{{ present.present_name}}</p>
+                    {% endfor %}
+                </div>
+                <div class="col-md-4">
+                    <p><b>{% trans "Белектин баяндамасы" %}</b></p>
+                    <hr>
+                    {% for present in presents %}
+                    <p class="card">{{ present.present_info}}</p>
+                     {% endfor %}
+                </div>
+                <div class="col-md-4">
+                    <p><b>{% trans "Берилген күнү" %}</b></p>
+                    <hr>
+                    {% for present in presents %}
+                    <p class="card">{{ present.present_date}}</p>
+                     {% endfor %}
+                </div>
+
+              </div>
+
+            </div>
+                      </li>
+                      <li class="list-group-item">
+                      <hr>
+              <h2 class="email-more-title">{% trans "ЭСЕПКЕ КАТТАЛГАНДАР" %}</h2>
+                      <hr>
+</li>
+
+
+<hr>
+<li  class="list-group-item my-list-table">
+<div class="col-md-12 top-table">
+        <span class="top-text">{{ detail.username }}</span>
+</div>
+<div class="col-md-12 middle-table">
+ {% for follower in followers %}
+        <div class="col-md-4 my-block">
+        {% if user.is_staff %}
+        <a href="{% url 'user_detail' follower.pk %}">{{follower.username}}</a>
+        {% else %}
+        {{follower.username}}
+        {% endif %}
+        </div>
+        {% endfor %}
+</div>
+
+<div class="col-md-12 my-block3">
+<div class="col-md-4 my-block2">
+{% for third in third_line_one %}
+<div class="col-md-12">
+{% if user.is_staff %}
+        <a href="{% url 'user_detail' third.pk %}">{{third.username }}</a>
+        {% else %}
+        {{third }}
+        {% endif %}
+       </div>
+    {% endfor %}
+        </div>
+        <div class="col-md-4 my-block2">
+{% for third in third_line_two %}
+<div class="col-md-12">
+{% if user.is_staff %}
+<a href="{% url 'user_detail' third.pk %}">{{third.username }}</a>
+{% else %}
+        {{third }}
+        {% endif %}
+       </div>
+    {% endfor %}
+        </div>
+        <div class="col-md-4 my-block2">
+{% for third in third_line_three %}
+<div class="col-md-12">
+{% if user.is_staff %}
+<a href="{% url 'user_detail' third.pk %}">{{third.username }}</a>
+{% else %}
+        {{third }}
+        {% endif %}
+       </div>
+    {% endfor %}
+
+        </div>
+</div>
+
+</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Panel -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Page -->
+{% endblock %}

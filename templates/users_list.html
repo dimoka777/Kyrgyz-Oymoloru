@@ -1,0 +1,80 @@
+{% extends '_base.html' %}
+{% load i18n l10n%}
+{% block content %}
+    <!-- Page -->
+    <div class="page">
+      <div class="page-header">
+        <h1 class="page-title">{% trans "Колдонуучулардын тизмеси" %}</h1>
+
+      </div>
+
+      <div class="page-content container-fluid">
+
+        <div class="row">
+          <div class="col-xl-12">
+            <!-- Panel Filtering rows -->
+            <div class="panel">
+              <header class="panel-heading">
+                <h3 class="panel-title">{% trans "Колдонуучулардын тизмеси" %}</h3>
+              </header>
+              <div class="panel-body">
+                <table class="table table-bordered table-hover toggle-circle" id="exampleFootableFiltering"
+                  data-paging="true" data-filtering="true" data-sorting="true">
+                  <thead>
+                    <tr>
+                      <th data-name="id" data-type="number" data-breakpoints="xs">№</th>
+                      <th data-name="firstName">{% trans "Аты-жөнү" %}</th>
+                      <th data-name="status">{% trans "Баскычы" %}</th>
+                      <th data-name="something" data-visible="true" data-filterable="false">{% trans "Катталган күнү" %}</th>
+                      <th data-name="jobTitle" data-breakpoints="xs sm">{% trans "Тел номуру" %}</th>
+                      {% if user.is_staff %}
+                      <th data-name="lastName">{% trans "Башкаруу" %}</th>
+                      {% endif %}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for list in object_list %}
+                     {% if list.status == True %}
+                            {% if  list.is_staff or list.is_superuser %}
+                            {% else %}
+                    <tr>
+
+                                <td class="counterCell"></td>
+                                <td style="text-align: left">{{ list.username }}</td>
+                                <td>{{ list.level }}</td>
+                                <td>{{ list.registration_date }}</td>
+                                <td>{{ list.phone_number }}</td>
+                                {% if user.is_staff %}
+                                <td>
+                                    <a href="{% url 'user_detail' list.pk %}"
+                                       style="background:#0028ff94; color:#fff; font-weight:700; font-size:13px; padding:4px 12px; border-radius: 6px;"><i
+                                            class="icon  wb-user"></i></a>
+                                            {% if user.is_superuser %}
+                                    <a href="{% url 'user_update' list.pk %}"
+                                       style="background:green; color:#fff; font-weight:700; font-size:13px; padding:4px 10px; border-radius: 6px; margin-left:1px;"><i
+                                            class="icon  wb-settings"></i></a>
+                                    <a href="{% url 'user_delete' list.pk %}"
+                                       style="background:red; color:#fff; font-weight:700; font-size:13px; padding:4px 10px; border-radius: 6px;"><i
+                                            class="icon wb-trash"></i></a>
+                                            {%endif%}
+                                </td>
+                                {% endif %}
+                    </tr>
+
+
+                            {% endif %}
+                        {% endif %}
+                {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- End Panel Filtering -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Page -->
+
+{% endblock %}

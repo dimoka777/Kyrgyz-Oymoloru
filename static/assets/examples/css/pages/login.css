@@ -1,0 +1,23 @@
+.page-login:before {
+    background-image: url(../../../../demo/bg/bg-11.jpg);
+    background-position-y: -97px !important;
+}
+.page-login form {
+  width: 340px;
+  margin: 30px 0;
+}
+
+.page-login form a {
+  margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+  .page-login form {
+    width: auto;
+  }
+  .page-register:before {
+        background-image: url(../../../../demo/bg/bg-11.jpg);
+        background-position-y: -97px !important;
+        background-repeat: no-repeat;
+    }
+}

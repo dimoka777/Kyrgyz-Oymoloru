@@ -1,0 +1,67 @@
+{% extends '_base.html' %}
+{% load static i18n %}
+{% block content %}
+
+    <!-- Page -->
+    <div class="page">
+      <div class="page-header">
+        <h1 class="page-title">{% trans "Офистер тизмеси" %}</h1>
+
+
+      </div>
+
+      <div class="page-content container-fluid">
+
+        <div class="row">
+          <div class="col-xl-12">
+            <!-- Panel Filtering rows -->
+            <div class="panel">
+              <header class="panel-heading">
+                <h3 class="panel-title">{% trans "Офистер тизмеси" %}</h3>
+              </header>
+              <div class="panel-body">
+                <table class="table table-bordered table-hover toggle-circle " id="exampleFootableFiltering"
+                  data-paging="true" data-filtering="true" data-sorting="true">
+
+                  <thead class="my-table">
+                  <a href="{% url 'office_create' %}" class="btn btn-outline-info create-office">{% trans "Офис кошуу" %}</a>
+                    <tr>
+                      <th data-name="id" data-type="number" data-breakpoints="xs">№</th>
+                      <th data-name="firstName">{% trans "Регион" %}</th>
+                      <th data-name="something" data-visible="true" data-filterable="false">{% trans "Башкаруу" %}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for list in object_list %}
+
+                    <tr>
+
+                                <td class="counterCell"></td>
+                                <td style="text-align: left">{{ list.office_city }}</td>
+                                <td>
+                                    <a href="{% url 'office_update' list.pk %}"
+                                       style="background:green; color:#fff; font-weight:700; font-size:13px; padding:4px 10px; border-radius: 6px; margin-left:1px;"><i
+                                            class="icon  wb-settings"></i></a>
+                                    <a href="{% url 'office_delete' list.pk %}"
+                                       style="background:red; color:#fff; font-weight:700; font-size:13px; padding:4px 10px; border-radius: 6px;"><i
+                                            class="icon wb-trash"></i></a>
+                                </td>
+                    </tr>
+                {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- End Panel Filtering -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Page -->
+<style>
+thead.my-table form select {
+    display: none !important;
+}
+</style>
+{% endblock %}

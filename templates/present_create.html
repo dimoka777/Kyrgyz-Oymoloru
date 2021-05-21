@@ -1,0 +1,35 @@
+{% extends '_base.html' %}
+{% block title %}Sign Up{% endblock %}
+{% load i18n %}
+{% block content %}
+
+ <!-- Page -->
+    <div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out" style="padding-top: 50px;">
+      <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
+        <h2>{% blocktrans %}Кайсыл белек <b>"{{user_gift}}"</b> бергиниз келет ?{% endblocktrans %}</h2>
+
+
+            <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>
+            <input type="text" name="name" class="form-control" placeholder="Белектин аталышы">
+        </label>
+
+        <label>
+            <input type="text" name="info" class="form-control" placeholder="Белектин баяндамасы">
+        </label>
+        <label>
+            <input type="datetime-local" name="date" class="form-control">
+
+        </label>
+        <label>
+            <input type="hidden" name="gift_user" value="{{ user_gift.pk }}">
+        </label>
+        <button class="btn btn-info" type="submit" value="Сактоо">{% trans "Сактоо" %}</button>
+    </form>
+
+
+      </div>
+    </div>
+    <!-- End Page -->
+{% endblock %}

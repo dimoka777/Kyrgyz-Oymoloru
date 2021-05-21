@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="ru">
+{% load static i18n %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="bootstrap admin template">
+    <meta name="author" content="">
+
+    <title>Кыргыз Оймолору</title>
+
+    <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-extend.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/site.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/examples/css/pages/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/examples/css/forms/validation.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/select2/select2.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/examples/css/forms/advanced.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/examples/css/pages/errors.css' %}">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/animsition/animsition.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/asscrollable/asScrollable.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/switchery/switchery.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/intro-js/introjs.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/slidepanel/slidePanel.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/flag-icon-css/flag-icon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/footable/footable.core.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/examples/css/tables/footable.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/examples/css/pages/forgot-password.css' %}">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="{% static 'assets/fonts/web-icons/web-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/brand-icons/brand-icons.min.css' %}">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+    <!--[if lt IE 9]>
+    <script src="{% static 'assets/vendor/html5shiv/html5shiv.min.js' %}"></script>
+    <![endif]-->
+
+    <!--[if lt IE 10]>
+    <script src="{% static 'assets/vendor/media-match/media.match.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/respond/respond.min.js' %}"></script>
+    <![endif]-->
+
+    <!-- Scripts -->
+    <script src="{% static 'assets/vendor/breakpoints/breakpoints.js' %}"></script>
+    <script>
+      Breakpoints();
+    </script>
+  </head>
+  <body class="animsition site-navbar-small ">
+      <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse"
+      role="navigation">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided"
+          data-toggle="menubar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse"
+          data-toggle="collapse">
+          <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+        </button>
+        <a class="navbar-brand navbar-brand-center" href="{% url 'home' %}">
+          <img class="navbar-brand-logo navbar-brand-logo-normal hidden-xs-down" src="{% static 'img/logo/logo.png' %}"
+            title=" Kyrgyzomoloru">
+          <span class="navbar-brand-text "> Kyrgyzomoloru</span>
+        </a>
+      </div>
+ <div class="navbar-container container-fluid">
+        <!-- Navbar Collapse -->
+        <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+           <!-- Navbar Toolbar -->
+          <ul class="nav navbar-toolbar">
+           <li class="nav-item" id="toggleFullscreen">
+              <a class="nav-link" href="{% url 'home' %}">
+                              <i class="site-menu-icon wb-home" aria-hidden="true"></i>
+                              <span class="site-menu-title">{% trans "Вебсайт" %}</span>
+                            </a>
+            </li>
+            {% if user.is_staff %}
+            <li class="nav-item" id="toggleFullscreen">
+              <a class="nav-link" href="{% url 'users_list' %}">
+                              <i class="site-menu-icon wb-users" aria-hidden="true"></i>
+                              <span class="site-menu-title">{% trans "Катталгандар тизмеси" %}</span>
+                            </a>
+            </li>
+            {% endif %}
+            {% if user.is_superuser %}
+            <li class="nav-item" id="toggleFullscreen">
+              <a class="nav-link" href="{% url 'waiting_users' %}">
+                              <i class="site-menu-icon wb-user-add" aria-hidden="true"></i>
+                              <span class="site-menu-title">{% trans "Тастыкталуу учун" %}</span>
+                            </a>
+            </li>
+            {% endif %}
+            {% if user.is_staff %}
+            <li class="nav-item" id="toggleFullscreen">
+              <a class="nav-link" href="{% url 'present_list' %}">
+                              <i class="site-menu-icon wb-star" aria-hidden="true"></i>
+                              <span class="site-menu-title">{% trans "Белектер" %}</span>
+                            </a>
+            </li>
+            {% endif %}
+            {% if user.is_superuser %}
+            <li class="nav-item" id="toggleFullscreen">
+              <a class="nav-link" href="{% url 'office_list' %}">
+                              <i class="site-menu-icon wb-flag" aria-hidden="true"></i>
+                              <span class="site-menu-title">{% trans "Офистер" %}</span>
+                            </a>
+            </li>
+            {% endif %}
+          </ul>
+          <!-- End Navbar Toolbar -->
+
+          <!-- Navbar Toolbar Right -->
+          <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+           <!-- <li class="nav-item dropdown">
+              {% if LANGUAGE_CODE == 'ru' %}
+              <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" data-animation="scale-up">
+                <span class="flag-icon flag-icon-ru"></span>
+              </a>
+              {% else %}
+              <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" data-animation="scale-up">
+                <span class="flag-icon flag-icon-kg"></span>
+              </a>
+              {% endif %}
+              <div class="dropdown-menu" role="menu">
+                  {% get_available_languages as languages %}
+
+{% for lang_code, lang_name in languages %}
+
+    {% language lang_code %}
+    <a class="dropdown-item" href="{% url 'users_list'  %}" role="menuitem">
+                  {{ lang_name }}</a>
+    {% endlanguage %}
+{% endfor %}
+              </div>
+
+            </li>-->
+            <li class="nav-item dropdown">
+              <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
+                data-animation="scale-up" role="button">
+                <span class="avatar avatar-online">
+                  <img src="{% static 'assets/images/logo.png' %}" alt="...">
+                  <i></i>
+                </span>
+              </a>
+              <div class="dropdown-menu" role="menu">
+                <a class="dropdown-item" href="{% url 'user_detail' user.pk %}" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Профиль</a>
+                <a class="dropdown-item" href="{% url 'password_change' %}" role="menuitem"><i class="icon wb-unlock" aria-hidden="true"></i> {% trans 'Пароль өзгөртүү' %}</a>
+                <div class="dropdown-divider" role="presentation"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i>{% trans 'Чыгуу' %}</a>
+              </div>
+            </li>
+          </ul>
+          <!-- End Navbar Toolbar Right -->
+        </div>
+        <!-- End Navbar Collapse -->
+        </div>
+    </nav>
+    <div class="site-menubar site-menubar-light d-md-none d-lg-none d-xl-none">
+      <div class="site-menubar-body">
+        <div>
+          <div>
+            <ul class="site-menu" data-plugin="menu">
+              <li class="nav-item" id="toggleFullscreen">
+              <a class="nav-link" href="{% url 'home' %}">
+                              <i class="site-menu-icon wb-home" aria-hidden="true"></i>
+                              <span class="site-menu-title">{% trans "Вебсайт" %}</span>
+                            </a>
+            </li>
+            {% if user.is_staff %}
+            <li class="nav-item" id="toggleFullscreen">
+              <a class="nav-link" href="{% url 'users_list' %}">
+                              <i class="site-menu-icon wb-users" aria-hidden="true"></i>
+                              <span class="site-menu-title">{% trans "Катталгандар" %}</span>
+                            </a>
+            </li>
+            {% endif %}
+            {% if user.is_superuser %}
+            <li class="nav-item" id="toggleFullscreen">
+              <a class="nav-link" href="{% url 'waiting_users' %}">
+                              <i class="site-menu-icon wb-user-add" aria-hidden="true"></i>
+                              <span class="site-menu-title">{% trans "Катталуу" %}</span>
+                            </a>
+            </li>
+            {% endif %}
+            {% if user.is_staff %}
+            <li class="nav-item" id="toggleFullscreen">
+              <a class="nav-link" href="{% url 'present_list' %}">
+                              <i class="site-menu-icon wb-star" aria-hidden="true"></i>
+                              <span class="site-menu-title">{% trans "Белектер" %}</span>
+                            </a>
+            </li>
+            {% endif %}
+            {% if user.is_superuser %}
+            <li class="nav-item" id="toggleFullscreen">
+              <a class="nav-link" href="{% url 'office_list' %}">
+                              <i class="site-menu-icon wb-flag" aria-hidden="true"></i>
+                              <span class="site-menu-title">{% trans "Офистер" %}</span>
+                            </a>
+            </li>
+            {% endif %}
+            </ul>      </div>
+        </div>
+      </div>
+    </div>
+
+  {% block content %}
+
+  {% endblock %}
+  <!-- Footer -->
+    <footer class="site-footer">
+      <div class="site-footer-legal">© 2019 </div>
+      <div class="site-footer-right">
+        Создано с <i class="red-600 wb wb-heart"></i> от <a href="http://infis.kg">Infis Studio</a>
+      </div>
+    </footer>
+    <!-- Core  -->
+    <script src="{% static 'assets/vendor/babel-external-helpers/babel-external-helpers.js' %}"></script>
+    <script src="{% static 'assets/vendor/jquery/jquery.js' %}"></script>
+    <script src="{% static 'assets/vendor/popper-js/umd/popper.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/vendor/animsition/animsition.js' %}"></script>
+    <script src="{% static 'assets/vendor/mousewheel/jquery.mousewheel.js' %}"></script>
+    <script src="{% static 'assets/vendor/asscrollbar/jquery-asScrollbar.js' %}"></script>
+    <script src="{% static 'assets/vendor/asscrollable/jquery-asScrollable.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'assets/vendor/switchery/switchery.js' %}"></script>
+    <script src="{% static 'assets/vendor/intro-js/intro.js' %}"></script>
+    <script src="{% static 'assets/vendor/screenfull/screenfull.js' %}"></script>
+    <script src="{% static 'assets/vendor/slidepanel/jquery-slidePanel.js' %}"></script>
+    <script src="{% static 'assets/vendor/moment/moment.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/footable/footable.min.js' %}"></script>
+
+
+    <!-- Scripts -->
+    <script src="{% static 'assets/js/Component.js' %}"></script>
+    <script src="{% static 'assets/js/Plugin.js' %}"></script>
+    <script src="{% static 'assets/js/Base.js' %}"></script>
+    <script src="{% static 'assets/js/Config.js' %}"></script>
+    <script src="{% static 'assets/js/Section/Menubar.js' %}"></script>
+    <script src="{% static 'assets/js/Section/Sidebar.js' %}"></script>
+    <script src="{% static 'assets/js/Section/PageAside.js' %}"></script>
+    <script src="{% static 'assets/js/Plugin/menu.js' %}"></script>
+
+    <!-- Config -->
+    <script src="{% static 'assets/js/config/colors.js' %}"></script>
+    <script src="{% static 'assets/js/config/tour.js' %}"></script>
+    <script>Config.set('assets', '../../assets');</script>
+
+    <!-- Page -->
+    <script src="{% static 'assets/js/Site.js' %}"></script>
+    <script src="{% static 'assets/js/Plugin/asscrollable.js' %}"></script>
+    <script src="{% static 'assets/js/Plugin/slidepanel.js' %}"></script>
+    <script src="{% static 'assets/js/Plugin/switchery.js' %}"></script>
+
+        <script src="{% static 'assets/examples/js/tables/footable.js' %}"></script>
+        <script src="{% static 'assets/vendor/select2/select2.full.min.js' %}"></script>
+        <script src="{% static 'assets/examples/js/forms/advanced.js' %}"></script>
+
+
+  </body>
+</html>
